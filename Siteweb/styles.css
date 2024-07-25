@@ -1,0 +1,342 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+    border-bottom: 1px solid #333;
+    position: relative;
+    flex-wrap: wrap; /* Added to handle responsive layout */
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.header-content {
+    flex: 1;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+header h1:hover {
+    color: #ff0099;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInDown 1s ease-in-out forwards;
+}
+
+nav ul li {
+    margin: 0 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ff0099;
+    transform: scale(1.1);
+}
+
+.animate-text {
+    font-size: 3em;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0099, 0 0 40px #ff0099, 0 0 50px #ff0099, 0 0 60px #ff0099, 0 0 70px #ff0099;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff0099, 0 0 40px #ff0099, 0 0 50px #ff0099, 0 0 60px #ff0099, 0 0 70px #ff0099, 0 0 80px #ff0099;
+    }
+}
+
+.about-me, .contact {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.services, .testimonials {
+    background-color: #222;
+}
+
+.service-list, .testimonial-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service, .testimonial {
+    margin: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service:hover, .testimonial:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 153, 0.5);
+}
+
+.project img {
+    width: 49%;
+    border-bottom: 1px solid #333;
+    transition: transform 0.3s ease-in-out;
+    height: 400px;
+    text-align: center;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet (portrait and landscape) */
+@media (min-width: 600px) and (max-width: 900px) {
+    .header-content h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .service, .testimonial {
+        width: 90%;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+/* Mobile (portrait) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .header-content {
+        flex: 1;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .about-me, .contact {
+        padding: 10px;
+    }
+
+    .service, .testimonial {
+        width: 95%;
+        margin: 10px 0;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+.contact-Me, .contact {
+    margin: 20px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: 2px solid #ff0099;
+    color: #fff;
+}
+form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff0099;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff66b2;
+}
+.comments {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#comment-form input, #comment-form textarea {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: 2px solid #ff0099;
+    color: #fff;
+}
+
+#comment-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff0099;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#comment-form button:hover {
+    background-color: #ff66b2;
+}
+
+#comment-list {
+    margin-top: 20px;
+}
+
+.comment-item {
+    background-color: #222;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.comment-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.comment-item p {
+    margin: 5px 0 0;
+    font-size: 1em;
+}
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    color: #25D366; /* Couleur verte de WhatsApp */
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.whatsapp-link:hover {
+    text-decoration: underline;
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
